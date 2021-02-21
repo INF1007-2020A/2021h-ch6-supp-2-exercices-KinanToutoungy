@@ -1,26 +1,46 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 import math
 import copy
 import itertools
 
-
 def get_even_keys(dictionary):
-	return {}
+
+	return {key for key in dictionary.keys() if key % 2 == 0}
 
 def join_dictionaries(dictionaries):
-	return {}
+
+	return {key: value for d in dictionaries for key, value in d.items()}
+
 
 def dictionary_from_lists(keys, values):
-	return {}
+
+	return {keys[i]: values[i] for i in range(len(keys))}
+
 
 def get_greatest_values(dictionnary, num_values):
-	return []
+	liste = []
+
+	for values in dictionnary.values():
+		liste.append(values)
+		liste.sort(reverse=True)
+
+	return liste[0:num_values]
+
+	#return sorted(dictionary.values(), reverse=True)[0:num_values]
+
 
 def get_sum_values_from_key(dictionnaries, key):
-	return 0
+	"""
+	somme = 0
+	for d in dictionnaries:
+		if key in d:
+			somme += d[key]
+	return somme
+	"""
+
+	return sum([d[key] for d in dictionnaries if key in d])
 
 
 if __name__ == "__main__":

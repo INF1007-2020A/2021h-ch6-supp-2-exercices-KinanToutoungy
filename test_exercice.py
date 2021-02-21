@@ -89,6 +89,7 @@ class TestExercice(unittest.TestCase):
 			"Mauvaise génération de dictionnaires."
 		)
 
+
 	def test_get_greatest_values(self):
 		values = {
 			"nice": 69,
@@ -138,6 +139,7 @@ class TestExercice(unittest.TestCase):
 			expected,
 			"Mauvaises sommes."
 		)
+
 
 if __name__ == '__main__':
 	if not os.path.exists('logs'):
